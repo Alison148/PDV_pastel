@@ -1,0 +1,152 @@
+/* =============================== */
+/* CONFIGURAÇÃO BASE */
+/* =============================== */
+
+body {
+  background: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabeçalho */
+header {
+  background: #0d6efd;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+
+/* =============================== */
+/* COMANDAS */
+/* =============================== */
+
+.btn-comanda {
+  background: #e9ecef;
+  border: 1px solid #bbb;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-comanda:hover {
+  background: #dfe3e6;
+  cursor: pointer;
+}
+
+.btn-comanda.ativa {
+  background: #0d6efd !important;
+  color: white !important;
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 6px rgba(13,110,253,0.6);
+}
+
+
+/* =============================== */
+/* CARD DA COMANDA */
+/* =============================== */
+
+.card {
+  border-radius: 10px;
+  border: 1px solid #d6d6d6;
+  background: white;
+}
+
+#tituloComanda {
+  font-weight: 700;
+}
+
+#total {
+  background: #f1f1f1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: fit-content;
+}
+
+
+/* =============================== */
+/* PRODUTOS */
+/* =============================== */
+
+.produto-card {
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background: white;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.produto-card:hover {
+  transform: scale(1.05);
+  background: #fff6d1 !important;
+}
+
+.produto-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.produto-preco {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+/* =============================== */
+/* BOTÕES */
+/* =============================== */
+
+button.btn-success {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+button.btn-success:hover {
+  transform: scale(1.03);
+}
+
+
+/* =============================== */
+/* RESPONSIVIDADE */
+/* =============================== */
+
+@media (max-width: 768px) {
+  .produto-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  header {
+    font-size: 18px;
+  }
+
+  .btn-comanda {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .produto-card {
+    padding: 10px;
+  }
+
+  .produto-preco {
+    font-size: 16px;
+  }
+}
+/* =============================== */
+/* FIM DO ARQUIVO */
+/* =============================== */
