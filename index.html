@@ -13,6 +13,7 @@
   <!-- jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,15 +21,21 @@
 
 <div class="container py-4">
 
-  <!-- COMANDAS -->
+  <!-- TÍTULO -->
   <h2 id="tituloSelecionar">Selecionar Comanda</h2>
-  <div id="listaComandas"></div>
+
+  <button class="btn btn-secondary mb-3" onclick="adicionarComanda()">
+    + Adicionar Comanda
+  </button>
+
+  <!-- LISTA DE COMANDAS -->
+  <div id="listaComandas" class="mb-4"></div>
 
   <hr class="my-4">
 
   <div class="row">
 
-    <!-- LADO ESQUERDO -->
+    <!-- COLUNA ESQUERDA -->
     <div class="col-12 col-lg-4">
       <div class="card p-4 mb-4">
         <h3 id="tituloComanda">Selecione uma comanda</h3>
@@ -37,40 +44,38 @@
         <input id="nomeCliente" class="form-control mb-2" oninput="salvarNomeCliente()">
 
         <label>Total:</label>
-        <div class="total-box mb-2">
+        <div class="total-box mb-3">
           <h3 id="total">R$ 0.00</h3>
         </div>
 
         <label>Forma de Pagamento:</label>
-        <select id="pagamento" class="form-select mb-3">
-          <option value="DINHEIRO">DINHEIRO</option>
-          <option value="PIX">PIX</option>
-          <option value="CARTÃO">CARTÃO (0,79%)</option>
-        </select>
+       <select id="pagamento" class="form-select mb-3">
+  <option value="DINHEIRO">DINHEIRO</option>
+  <option value="PIX">PIX</option>
+  <option value="DEBITO">CARTÃO de Débito (0,79%)</option>
+  <option value="CREDITO">CARTÃO de Crédito (3,99%)</option>
+</select>
+
 
         <button class="btn btn-success w-100" onclick="finalizarComanda()">Finalizar Comanda</button>
       </div>
 
-      <!-- BOTÕES DE AÇÕES -->
       <button class="btn btn-outline-primary w-100 mb-2" onclick="verHistorico()">Ver Histórico</button>
 
-      <button class="btn btn-outline-danger w-100 mb-2" onclick="limparHistorico()">Limpar Histórico</button>
-
-      <!-- 👉 BOTÃO QUE VOCÊ PEDIU AQUI 👇 -->
       <button class="btn btn-warning w-100 mb-2" onclick="fechamentoDoDia()">
         Fechamento do Dia
       </button>
 
+      <button class="btn btn-outline-danger w-100" onclick="limparHistorico()">Limpar Histórico</button>
     </div>
 
-    <!-- ITENS & PRODUTOS -->
+    <!-- COLUNA DIREITA -->
     <div class="col-12 col-lg-8">
 
       <h4>Itens da Comanda:</h4>
-      <ul id="listaItens" class="list-group mb-4"></ul>
+      <div id="listaItens"></div>
 
-      <h3>Produtos</h3>
-      <div class="row" id="listaProdutos"></div>
+      <h3 class="mt-4">Produtos</h3>
 
       <!-- BOTÃO DE ADICIONAR PRODUTO -->
       <button class="btn btn-primary mb-3" onclick="adicionarNovoProduto()">
@@ -85,6 +90,7 @@
 
 </div>
 
+<!-- JS -->
 <script src="app.js"></script>
 
 </body>

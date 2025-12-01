@@ -1,4 +1,14 @@
 /* ===============================
+   GLOBAL
+================================== */
+body {
+  background: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+
+
+/* ===============================
    TÍTULO DAS COMANDAS
 ================================== */
 #tituloSelecionar {
@@ -6,6 +16,8 @@
   font-weight: bold;
   margin-bottom: 20px;
 }
+
+
 
 /* ===============================
    GRID DAS COMANDAS (4 COLUNAS)
@@ -17,6 +29,9 @@
   width: 100%;
 }
 
+
+
+/* BOTÕES DAS COMANDAS */
 .btn-comanda {
   width: 100%;
   background: #ffffff;
@@ -42,10 +57,31 @@
   box-shadow: 0 0 10px rgba(13,110,253,0.6);
 }
 
-/* ===============================
-   ITEM LIST (NOVO SISTEMA)
-================================== */
 
+
+/* ===============================
+   PRODUTO CARD (CLIQUE PARA ADICIONAR)
+================================== */
+.produto-card {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: 0.25s;
+}
+
+.produto-card:hover {
+  transform: scale(1.05);
+  background: #fff6d1;
+}
+
+
+
+/* ===============================
+   ITEM DA COMANDA (LISTA)
+================================== */
 .item-card {
   width: 100%;
   background: white;
@@ -66,18 +102,24 @@
 .item-preco {
   font-size: 16px;
   font-weight: 700;
-  color: green;
+  color: #198754;
 }
 
+
+
+/* ===============================
+   BOTÕES DE QUANTIDADE
+================================== */
 .qty-btn {
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 6px;
   margin: 0 4px;
   border: none;
   font-size: 16px;
   font-weight: bold;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
 }
 
 .qty-add {
@@ -90,15 +132,43 @@
   color: white;
 }
 
-/* TOTAL BOX */
+
+
+/* ===============================
+   TOTAL BOX
+================================== */
 .total-box {
-  background: #ffffff;
-  border: 2px solid #ccc;
+  background: #000000;
   border-radius: 12px;
   padding: 12px;
+  text-align: center;
 }
 
-/* RESPONSIVO */
-@media (max-width: 992px) { #listaComandas { grid-template-columns: repeat(3, 1fr);} }
-@media (max-width: 768px) { #listaComandas { grid-template-columns: repeat(2, 1fr);} }
-@media (max-width: 480px) { #listaComandas { grid-template-columns: repeat(1, 1fr);} }
+#total {
+  color: #00ff99;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+
+/* ===============================
+   RESPONSIVIDADE
+================================== */
+@media (max-width: 992px) {
+  #listaComandas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #listaComandas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #listaComandas {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
