@@ -1,152 +1,104 @@
-/* =============================== */
-/* CONFIGURAÇÃO BASE */
-/* =============================== */
-
-body {
-  background: #f8f9fa;
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Cabeçalho */
-header {
-  background: #0d6efd;
-  color: white;
-  padding: 15px;
-  text-align: center;
+/* ===============================
+   TÍTULO DAS COMANDAS
+================================== */
+#tituloSelecionar {
+  font-size: 26px;
   font-weight: bold;
-  letter-spacing: 1px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
 }
 
-
-/* =============================== */
-/* COMANDAS */
-/* =============================== */
+/* ===============================
+   GRID DAS COMANDAS (4 COLUNAS)
+================================== */
+#listaComandas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+}
 
 .btn-comanda {
-  background: #e9ecef;
-  border: 1px solid #bbb;
-  padding: 10px;
-  border-radius: 6px;
   width: 100%;
-  font-weight: 600;
-  transition: 0.2s;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 0;
+  text-align: center;
+  border: 2px solid #d4d4d4;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.25s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .btn-comanda:hover {
-  background: #dfe3e6;
-  cursor: pointer;
+  border-color: #0d6efd;
+  transform: scale(1.03);
 }
 
 .btn-comanda.ativa {
   background: #0d6efd !important;
   color: white !important;
   border-color: #0d6efd !important;
-  box-shadow: 0 0 6px rgba(13,110,253,0.6);
+  box-shadow: 0 0 10px rgba(13,110,253,0.6);
 }
 
+/* ===============================
+   ITEM LIST (NOVO SISTEMA)
+================================== */
 
-/* =============================== */
-/* CARD DA COMANDA */
-/* =============================== */
-
-.card {
-  border-radius: 10px;
-  border: 1px solid #d6d6d6;
+.item-card {
+  width: 100%;
   background: white;
-}
-
-#tituloComanda {
-  font-weight: 700;
-}
-
-#total {
-  background: #f1f1f1;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: fit-content;
-}
-
-
-/* =============================== */
-/* PRODUTOS */
-/* =============================== */
-
-.produto-card {
   border-radius: 10px;
-  padding: 15px;
   border: 1px solid #ddd;
-  background: white;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.25s;
-}
-
-.produto-card:hover {
-  transform: scale(1.05);
-  background: #fff6d1 !important;
-}
-
-.produto-img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 8px;
 }
 
-.produto-preco {
-  color: #28a745;
+.item-info {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.item-preco {
+  font-size: 16px;
+  font-weight: 700;
+  color: green;
+}
+
+.qty-btn {
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin: 0 4px;
+  border: none;
+  font-size: 16px;
   font-weight: bold;
-  font-size: 18px;
+  width: 32px;
+  height: 32px;
 }
 
-
-/* =============================== */
-/* BOTÕES */
-/* =============================== */
-
-button.btn-success {
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 8px;
+.qty-add {
+  background: #198754;
+  color: white;
 }
 
-button.btn-success:hover {
-  transform: scale(1.03);
+.qty-remove {
+  background: #dc3545;
+  color: white;
 }
 
-
-/* =============================== */
-/* RESPONSIVIDADE */
-/* =============================== */
-
-@media (max-width: 768px) {
-  .produto-img {
-    width: 70px;
-    height: 70px;
-  }
-
-  header {
-    font-size: 18px;
-  }
-
-  .btn-comanda {
-    font-size: 14px;
-    padding: 8px;
-  }
+/* TOTAL BOX */
+.total-box {
+  background: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
 }
-@media (max-width: 480px) {
-  .produto-card {
-    padding: 10px;
-  }
 
-  .produto-preco {
-    font-size: 16px;
-  }
-}
-/* =============================== */
-/* FIM DO ARQUIVO */
-/* =============================== */
+/* RESPONSIVO */
+@media (max-width: 992px) { #listaComandas { grid-template-columns: repeat(3, 1fr);} }
+@media (max-width: 768px) { #listaComandas { grid-template-columns: repeat(2, 1fr);} }
+@media (max-width: 480px) { #listaComandas { grid-template-columns: repeat(1, 1fr);} }
